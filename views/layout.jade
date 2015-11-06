@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js")
+    body(
+        ng-app="expressApp",
+        ng-controller="MainCtrl"
+    )
+        block content
+        script(src="javascripts/app.js")
+        script(src="javascripts/controllers/mainCtrl.js")
