@@ -5,6 +5,7 @@
     var express = require('express');
     var router = express.Router();
     var apiResponse = require('../json/model.json');
+    var apiTest = require('../json/test.json');
 
     // Api
     router.get('/', function ( req, res ) {
@@ -12,7 +13,7 @@
     });
 
     router.get('/test', function (req, res) {
-        res.send('this is a test');
+        res.send(apiTest);
     });
 
     module.exports = router;

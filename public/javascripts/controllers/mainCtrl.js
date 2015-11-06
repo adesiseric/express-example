@@ -25,8 +25,10 @@
         $scope.test = function () {
             $http.get('/api/test')
             .success(function (data) {
+                var newLine = '\r\n';
+
                 if (data) {
-                    alert(data);
+                    alert(data.title + newLine + data.msg);
                 }
             })
             .error(handleError);
