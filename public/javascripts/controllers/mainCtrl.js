@@ -8,6 +8,10 @@
             console.log('MainCtrl');
         }
 
+        function handleError () {
+            alert('Error: page not found.');
+        }
+
         $scope.obtenerAuto = function () {
             $http.get('/api')
             .success(function ( data ) {
@@ -15,9 +19,17 @@
                     $scope.model = data;
                 }
             })
-            .error(function ( data ) {
-                alert('Error: page not found.');
-            });
+            .error(handleError);
+        };
+
+        $scope.test = function () {
+            $http.get('/api/test')
+            .success(function (data) {
+                if (data) {
+                    alert(data);
+                }
+            })
+            .error(handleError);
         };
 
         setup();
